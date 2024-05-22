@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+*{ 
+padding:0px;
+margin:0px;
+box-sizing:border-box;
+font-family:"poppins" sans-serif;
+
+
+}
+
+#screensize{
+
+width:100%;
+
+height:100vh;
+
+
+
+}
+
+nav{
+
+justify-content:space-around;
+align-items:center;
+
+display:flex;
+flex-wrap:wrap;
+
+
+line-height:30px;
+
+}
+
+nav ul li{
+
+
+list-style:none; 
+
+display:inline-block;
+
+}
+
+
+nav ul li a {
+font-weight:400;
+text-decoration:none; 
+display:block;
+
+text-transform:capitalize; 
+
+border-radius:2%;
+padding:16px;
+color:red;
+
+
+
+}
+
+
+
+
+
+nav ul li a:hover{
+
+transition:0.5s;
+background-color:red;
+
+color:black;
+
+}
+
+
+.container{
+flex-wrap:wrap;
+justify-content:space-around;
+align-items:center;
+
+display:flex;
+
+
+}
+
+.right img{
+width:100%;
+
+
+animation:MoveUpDown 3s linear infinite;
+
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0px);     
+  }
+  50% {
+    transform: translateY(-25px);   
+  }
+}
+
+
+
+
+
+
+
+
+
+.left{
+
+max-width:600px;
+padding-left:50px;
+}
+
+.left h2{
+font-size:4em;
+letter-spacing:0.5px;
+line-height:1.5em;
+ font-weight: 900;
+ text-transform:uppercase;
+}
+
+.left p{
+ font-weight: 400;
+
+
+
+
+}
+
+.left a{
+
+text-decoration:none;
+
+border:none;
+border:2px dotted black;
+ font-size:20px;
+background-color:black;
+color:red;
+border-radius:5px;
+padding:10px;
+ font-weight: bold;
+}
+
+.logo{
+font-size:20px;
+
+
+}
+
+
+.right{
+
+
+
+
+
+
+max-width:600px;
+padding-left:50px;
+}
+
+
+
+
+.lr{
+
+
+justify-content:space-around;
+align-items:center;
+
+display:flex-end;
+
+
+
+
+
+
+}
+
+
+
+
+.lr ul li a{
+
+text-decoration:none;
+
+color:red;
+
+
+line-height:50px;
+
+
+
+
+
+
+
+
+
+
+}
+
+.lr ul li {
+
+list-style:none;
+margin:0px 20px;
+
+
+}
+
+
+.lr ul li:hover {
+
+
+
+transform:scaleX(2);
+transform:skewY(20deg);
+}
+
+
+.below{
+
+position:absolute;
+left:50%;
+bottom:20px;
+
+display:flex;
+
+transform:translateX(-50%);
+}
+
+
+
+.below ul li {
+
+list-style:none;
+
+display:inline-block;
+
+margin:0px 20px;
+
+transitions:0.5s;
+
+
+animation:MoveUpDown 4s linear infinite;
+
+
+}
+
+
+
+
+
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(-10px);     
+  }
+  50% {
+    transform: translateY(0px);   
+  }
+}
+
+
+
+
+
+
+
+
+
+.below ul li :hover {
+
+
+transform:translateY(-20px);
+
+}
+
+
+
+.logo img{
+margin-top:15px;
+ width:25%;
+
+
+}
+
+.slide1{
+
+animation:2s slidee;
+}
+
+
+@keyframes slidee {
+  from{
+    margin-top:-70%;   
+  }
+  to {
+   margin-top:0%; 
+  }
+}
+
+
+
+.left h2{
+
+
+animation:2s h2;
+}
+
+@keyframes h2 {
+  from{
+    margin-left:-70%;   
+  }
+  to {
+   margin-left:0%; 
+  }
+}
+
+
+
+
+
+.left p{
+
+
+animation:2s p;
+}
+
+@keyframes p {
+  from{
+    margin-top:-70%; 
+  }
+  to {
+     margin-top:0%; 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+<body class="bgcolor">
+
+
+<header id="screensize">
+
+<nav >
+<div class="logo">
+<img src="logo.png"  alt="img00"   />
+</div>
+
+
+<ul class="slide1">
+
+<li><a href="gggggg">home</a>  </li>
+<li><a href="gggggg">contact</a>  </li>
+<li><a href="gggggg">about</a>  </li>
+<li><a href="gggggg">new arrivals</a>  </li>
+<li><a href="gggggg">sales</a>  </li>
+
+
+
+
+<ul>
+
+
+</nav>
+
+<div class="container"    >
+
+<div class="left" >
+
+<h2><span style="color:red;">Welcome <br></span ><span style="color:black;">To Nike Shop</span></h2>
+<p>this shoes quality,this shoes quality,this shoes quality this shoes quality,this shoes quality,this shoes quality
+this shoes quality,this shoes quality,this shoes quality
+this shoes quality,this shoes quality,this shoes quality</p>
+<br><br>
+<a href="buttom.com">Contact us</a>
+
+
+</div>
+
+<div class="right">
+
+
+<img src="logoo.png" alt="img00" class="mainimage"  />
+
+
+</div>
+
+
+<div class="lr">
+
+<ul >
+<li><a href="gggggg"><img src="fb.png" alt="img01" width=35  ></a>  </li>
+<li><a href="gggggg"><img src="twitterr.png" alt="img02"  width=40 ></a>  </li>
+<li><a href="gggggg"><img src="insta.png" alt="img03" width=40 ></a>  </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+<div class="below">
+
+<ul>
+<li><img src="4.png"  onclick="random_Change('4.png');onchange=change_color('blue');"       alt="img01" width=60 >  </li>
+<li><img src="2.png"   onclick="random_Change('2.png');onchange=change_color('yellow');"       alt="img02"  width=60> </li>
+<li><img src="3.png"       onclick="random_Change('3.png');onchange=change_color('purple');"   alt="img02" width=60  > </li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+<script>
+
+function random_Change(img){
+
+
+document.querySelector('.mainimage').src=img;
+
+
+
+
+}
+
+function change_color(color){
+
+document.body.style.background=color;
+
+
+
+}
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
