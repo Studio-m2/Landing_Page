@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nike Shop | Landing Page</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background: #f5f5f5;
+      color: #111;
+      overflow-x: hidden;
+      transition: background-color 0.5s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* =========================
+       MAIN SECTION
+    ========================= */
+
+    #screensize {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding: 0 5%;
+    }
+
+    /* Decorative background */
+
+    #screensize::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: rgba(255, 0, 0, 0.08);
+      border-radius: 50%;
+      top: -180px;
+      right: -120px;
+      filter: blur(5px);
+      pointer-events: none;
+    }
+
+    #screensize::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 0, 0, 0.06);
+      border-radius: 50%;
+      bottom: -130px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      width: 100%;
+      min-height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 20;
+      animation: navDown 0.9s ease forwards;
+    }
+
+    .logo {
+      width: 90px;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 65px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .logo img:hover {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #111;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 10px 14px;
+      border-radius: 8px;
+      position: relative;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 50%;
+      bottom: 5px;
+      background: red;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: red;
+      background: rgba(255, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    nav ul li a:hover::after {
+      width: 60%;
+    }
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: #111;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 23px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* =========================
+       HERO CONTAINER
+    ========================= */
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      min-height: calc(100vh - 90px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 5;
+      padding-bottom: 80px;
+    }
+
+    /* =========================
+       LEFT CONTENT
+    ========================= */
+
+    .left {
+      max-width: 650px;
+      padding-left: 20px;
+      animation: textLeft 1s ease forwards;
+    }
+
+    .small-title {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: red;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .small-title::before {
+      content: "";
+      display: inline-block;
+      width: 35px;
+      height: 3px;
+      background: red;
+      vertical-align: middle;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .left h2 {
+      font-size: clamp(3rem, 6vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .left h2 .red-text {
+      color: red;
+      display: inline-block;
+    }
+
+    .left h2 .black-text {
+      color: #111;
+      display: inline-block;
+    }
+
+    .left p {
+      max-width: 570px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.9;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .left a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: white;
+      background: #111;
+      border: 2px solid #111;
+      border-radius: 10px;
+      padding: 14px 27px;
+      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .left a::after {
+      content: "→";
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .left a:hover {
+      background: red;
+      border-color: red;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 0, 0, 0.25);
+    }
+
+    .left a:hover::after {
+      transform: translateX(5px);
+    }
+
+    /* =========================
+       RIGHT IMAGE
+    ========================= */
+
+    .right {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: imageReveal 1.2s ease forwards;
+    }
+
+    .right::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      background: rgba(255, 0, 0, 0.08);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .right img {
+      width: min(100%, 570px);
+      height: auto;
+      object-fit: contain;
+      animation: MoveUpDown 4s ease-in-out infinite;
+      filter: drop-shadow(0 30px 25px rgba(0, 0, 0, 0.18));
+      transition: transform 0.4s ease;
+    }
+
+    .mobile-social {
+      display: none;
+    }
+
+    .mobile-social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    .mobile-social-icons a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .mobile-social-icons a img {
+      width: 21px;
+      height: 21px;
+      object-fit: contain;
+    }
+
+    .mobile-social-icons a:hover {
+      transform: translateY(-3px) scale(1.08);
+      background: red;
+    }
+
+    /* =========================
+       SOCIAL ICONS
+    ========================= */
+
+    .lr {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .lr ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .lr ul li {
+      margin: 0;
+    }
+
+    .lr ul li a {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    .lr ul li a img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .lr ul li a:hover {
+      transform: translateX(-7px) scale(1.1);
+      background: red;
+    }
+
+    .lr ul li a:hover img {
+      transform: scale(1.15);
+    }
+
+    /* =========================
+       PRODUCT SELECTOR
+    ========================= */
+
+    .below {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      z-index: 15;
+    }
+
+    .below ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .below ul li {
+      width: 75px;
+      height: 75px;
+      padding: 7px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+      animation: thumbnailFloat 4s ease-in-out infinite;
+    }
+
+    .below ul li:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .below ul li:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .below ul li:hover {
+      transform: translateY(-12px) scale(1.08);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .below ul li img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes navDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes textLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes imageReveal {
+      from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes MoveUpDown {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-22px);
+      }
+    }
+
+    @keyframes thumbnailFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      #screensize {
+        padding: 0 4%;
+      }
+
+      nav {
+        min-height: 80px;
+      }
+
+      nav ul {
+        gap: 0;
+      }
+
+      nav ul li a {
+        padding: 8px 9px;
+        font-size: 13px;
+      }
+
+      .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .left {
+        padding-left: 5px;
+      }
+
+      .left h2 {
+        font-size: clamp(2.7rem, 6vw, 4.8rem);
+        letter-spacing: -2px;
+      }
+
+      .left p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .right img {
+        max-width: 480px;
+      }
+
+      .right::before {
+        width: 330px;
+        height: 330px;
+      }
+
+      .lr {
+        right: 0;
+      }
+
+      .lr ul {
+        gap: 10px;
+      }
+
+      .lr ul li a {
+        width: 42px;
+        height: 42px;
+      }
+
+      .below ul li {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      #screensize {
+        min-height: 100vh;
+        padding: 0 20px;
+      }
+
+      nav {
+        min-height: 75px;
+      }
+
+      .logo {
+        width: 65px;
+      }
+
+      .logo img {
+        width: 55px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav > ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        background: rgba(255, 255, 255, 0.97);
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      nav > ul.active {
+        display: flex;
+        animation: menuOpen 0.3s ease forwards;
+      }
+
+      nav > ul li {
+        width: 100%;
+      }
+
+      nav > ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+      }
+
+      .mobile-social {
+        display: block;
+        width: 100%;
+        padding: 6px 0 2px;
+      }
+
+      .mobile-social-icons {
+        padding-top: 4px;
+      }
+
+      .container > .lr {
+        display: none;
+      }
+
+      .container {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 45px 0 140px;
+        text-align: center;
+      }
+
+      .left {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        animation: textMobile 0.9s ease forwards;
+      }
+
+      .small-title {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      .small-title::before {
+        width: 25px;
+      }
+
+      .left h2 {
+        font-size: clamp(2.8rem, 14vw, 5rem);
+        line-height: 0.95;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+      }
+
+      .left p {
+        max-width: 550px;
+        margin: 0 auto 25px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .left a {
+        padding: 12px 23px;
+        font-size: 14px;
+      }
+
+      .right {
+        max-width: 100%;
+        animation: imageMobile 1s ease forwards;
+      }
+
+      .right img {
+        width: min(100%, 400px);
+        margin: 0 auto;
+      }
+
+      .right::before {
+        width: 280px;
+        height: 280px;
+      }
+
+      .lr {
+        position: static;
+        transform: none;
+        margin-top: -15px;
+      }
+
+      .lr ul {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .lr ul li a {
+        width: 42px;
+        height: 42px;
+      }
+
+      .below {
+        bottom: 20px;
+      }
+
+      .below ul {
+        gap: 10px;
+      }
+
+      .below ul li {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+      }
+
+      @keyframes menuOpen {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes textMobile {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes imageMobile {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.85);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      #screensize {
+        padding: 0 15px;
+      }
+
+      .container {
+        padding-top: 35px;
+        padding-bottom: 125px;
+      }
+
+      .left h2 {
+        font-size: 3rem;
+      }
+
+      .left p {
+        font-size: 13px;
+        padding: 0 5px;
+      }
+
+      .right img {
+        width: 90%;
+      }
+
+      .right::before {
+        width: 230px;
+        height: 230px;
+      }
+
+      .lr ul {
+        gap: 8px;
+      }
+
+      .lr ul li a {
+        width: 38px;
+        height: 38px;
+      }
+
+      .lr ul li a img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .below ul {
+        gap: 7px;
+      }
+
+      .below ul li {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+      }
+    }
+
+    /* =========================
+       VERY SMALL DEVICES
+    ========================= */
+
+    @media (max-width: 350px) {
+
+      .left h2 {
+        font-size: 2.5rem;
+      }
+
+      .left p {
+        font-size: 12px;
+      }
+
+      .below ul li {
+        width: 46px;
+        height: 46px;
+      }
+    }
+
+    /* =========================
+       REDUCED MOTION
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="screensize">
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+      <div class="logo">
+        <img src="logo.png" alt="Nike Shop Logo">
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+        ☰
+      </button>
+
+      <ul id="navMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Sales</a></li>
+        <li class="mobile-social">
+          <div class="mobile-social-icons">
+            <a href="#"><img src="fb.png" alt="Facebook"></a>
+            <a href="#"><img src="twitterr.png" alt="Twitter"></a>
+            <a href="#"><img src="insta.png" alt="Instagram"></a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <div class="container">
+
+      <!-- LEFT -->
+
+      <div class="left">
+
+        <span class="small-title">Premium Footwear</span>
+
+        <h2>
+          <span class="red-text">Welcome</span>
+          <br>
+          <span class="black-text">To Nike Shop</span>
+        </h2>
+
+        <p>
+          Discover stylish and comfortable shoes designed for your
+          everyday lifestyle. Experience premium quality, modern design
+          and comfort with our latest collection.
+        </p>
+
+        <a href="#contact">
+          Contact Us
+        </a>
+
+      </div>
+
+
+      <!-- RIGHT -->
+
+      <div class="right">
+
+        <img
+          src="logoo.png"
+          alt="Nike Shoe"
+          class="mainimage"
+        >
+
+      </div>
+
+
+      <!-- SOCIAL -->
+
+      <div class="lr">
+
+        <ul>
+
+          <li>
+            <a href="#">
+              <img src="fb.png" alt="Facebook">
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="twitterr.png" alt="Twitter">
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src="insta.png" alt="Instagram">
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- PRODUCT SELECTOR -->
+
+    <div class="below">
+
+      <ul>
+
+        <li onclick="random_Change('4.png'); change_color('#dceeff');">
+          <img src="4.png" alt="Blue Shoe">
+        </li>
+
+        <li onclick="random_Change('2.png'); change_color('#fff5c7');">
+          <img src="2.png" alt="Yellow Shoe">
+        </li>
+
+        <li onclick="random_Change('3.png'); change_color('#eee2ff');">
+          <img src="3.png" alt="Purple Shoe">
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+
+  <script>
+
+    /* =========================
+       CHANGE PRODUCT IMAGE
+    ========================= */
+
+    function random_Change(img) {
+      const mainImage = document.querySelector(".mainimage");
+
+      mainImage.style.opacity = "0";
+      mainImage.style.transform = "scale(0.8)";
+
+      setTimeout(function () {
+        mainImage.src = img;
+
+        mainImage.onload = function () {
+          mainImage.style.opacity = "1";
+          mainImage.style.transform = "";
+        };
+      }, 200);
+    }
+
+
+    /* =========================
+       CHANGE BACKGROUND
+    ========================= */
+
+    function change_color(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+
+      if (navMenu.classList.contains("active")) {
+        menuToggle.innerHTML = "✕";
+      } else {
+        menuToggle.innerHTML = "☰";
+      }
+    });
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================= */
+
+    const navLinks = document.querySelectorAll("#navMenu a");
+
+    navLinks.forEach(function (link) {
+
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+        menuToggle.innerHTML = "☰";
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
